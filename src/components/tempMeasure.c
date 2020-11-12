@@ -1,7 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
+#include <stdio.h>
 
-float tempMeasure(){
+
+void* tempMeasure(void* arg){
+    float *temperatura = (float*) arg;
     system("sudo modprobe w1-gpio");
     system("sudo modprobe w1-therm");
     int i=0;
@@ -16,13 +20,13 @@ float tempMeasure(){
     fscanf(fp, "%*[^\n]\n");
     fscanf(fp,"%*29c%s",leitura);
     temp = strtof(leitura, NULL);
-    temp /= 1000;
+    temp /= 1000;;
     temp = temp - 5;
     fprintf(stderr, "temperatura :%f\n", temp);
     
     fclose(fp);
     i++;
     }
-	return temp;
+    *temperatura = temp;
 }
 

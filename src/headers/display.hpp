@@ -1,1 +1,1 @@
-extern "C" float tempMeasure();
+void* webcamShot(void*);

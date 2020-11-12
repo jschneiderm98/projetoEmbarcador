@@ -1,0 +1,3 @@
+/home/arivane/projetoEmbarcados/src/build/CMakeFiles/rebuild_cache.dir
+/home/arivane/projetoEmbarcados/src/build/CMakeFiles/display.dir
+/home/arivane/projetoEmbarcados/src/build/CMakeFiles/edit_cache.dir
