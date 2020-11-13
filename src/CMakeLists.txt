@@ -1,4 +1,4 @@
-SET(OpenCV_DIR /home/pi/installation/OpenCV-masrer/lib/cmake/opencv4)
+
 cmake_minimum_required(VERSION 2.8)              
 PROJECT(doughControl)                                   
 FIND_PACKAGE( OpenCV REQUIRED )  
@@ -8,6 +8,6 @@ find_package(Threads REQUIRED)
 INCLUDE_DIRECTORIES( ${OpenCV_INCLUDE_DIRS} )
 INCLUDE_DIRECTORIES(src)
 
-ADD_EXECUTABLE(breadMake main.cpp ./components/display.cpp ./components/tempMeasure.c)                          
+ADD_EXECUTABLE(breadMake main.cpp ./components/display.cpp ./components/tempMeasure.c ./components/checkGrowth.cpp)                          
 TARGET_LINK_LIBRARIES (breadMake ${OpenCV_LIBS} Threads::Threads) 
                    

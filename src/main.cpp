@@ -1,28 +1,22 @@
-#include <iostream>
-#include <unistd.h>
-#include <pthread.h>
-#include <signal.h>
+#include "headers/general.hpp"
 #include "headers/tempMeasure.hpp"
 #include "headers/display.hpp"
-
-int control = 1;
-
-void endProgram (int sig)
-{
-    control = 0;
-}
+#include "headers/checkGrowth.hpp"
 
 int main() {
     
     float temp;
     double size;
-    pthread_t p_temp, p_size;
-    signal (SIGINT, endProgram); 
-    while(control){
+    struct dados growth;
+    pthread_t p_temp, p_size, p_growth;
+    while(growth.growthStop){
         pthread_create(&p_temp, NULL, &tempMeasure, &temp);
         pthread_create(&p_size, NULL, &webcamShot, &size);
-        pthread_join(p_temp, NULL);
         pthread_join(p_size, NULL);
+        growth.sizeX=size;
+        pthread_create(&p_growth, NULL, &sizeBread, &growth);
+        pthread_join(p_temp, NULL);
+        pthread_join(p_growth,NULL);
         system("clear");
         std::cout << "------------------------------------------" << std::endl;
         std::cout << "|     Bread Area: " << size << "         |" << std::endl;
