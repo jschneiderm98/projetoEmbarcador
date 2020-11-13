@@ -6,13 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/arivane/projetoEmbarcados/src/components/tempMeasure.c
+/home/pi/projeto/projetoEmbarcados/src/components/tempMeasure.c
 stdio.h
 -
 stdlib.h
--
-unistd.h
--
-stdio.h
 -
 

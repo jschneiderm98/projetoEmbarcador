@@ -5,25 +5,25 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/arivane/projetoEmbarcados/src/components/tempMeasure.c" "/home/arivane/projetoEmbarcados/src/build/CMakeFiles/display.dir/components/tempMeasure.c.o"
+  "/home/pi/projeto/projetoEmbarcados/src/components/tempMeasure.c" "/home/pi/projeto/projetoEmbarcados/src/build/CMakeFiles/breadMake.dir/components/tempMeasure.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_C_TARGET_INCLUDE_PATH
-  "/usr/local/include/opencv4"
   "../src"
+  "/home/pi/installation/OpenCV-masrer/include/opencv4"
   )
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/arivane/projetoEmbarcados/src/components/display.cpp" "/home/arivane/projetoEmbarcados/src/build/CMakeFiles/display.dir/components/display.cpp.o"
-  "/home/arivane/projetoEmbarcados/src/main.cpp" "/home/arivane/projetoEmbarcados/src/build/CMakeFiles/display.dir/main.cpp.o"
+  "/home/pi/projeto/projetoEmbarcados/src/components/display.cpp" "/home/pi/projeto/projetoEmbarcados/src/build/CMakeFiles/breadMake.dir/components/display.cpp.o"
+  "/home/pi/projeto/projetoEmbarcados/src/main.cpp" "/home/pi/projeto/projetoEmbarcados/src/build/CMakeFiles/breadMake.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "/usr/local/include/opencv4"
   "../src"
+  "/home/pi/installation/OpenCV-masrer/include/opencv4"
   )
 
 # Targets to which this target links.

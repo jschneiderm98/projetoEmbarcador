@@ -44,8 +44,7 @@ double imageProcess(char* image)
 
 void* webcamShot(void *arg){
   double* size = (double*) arg;
-  system("fswebcam -d /dev/video1 /tmp/dough.jpg");
+  system("fswebcam -d /dev/video0 /tmp/dough.jpg > out.log 2> err.log");
   *size = imageProcess("/tmp/dough.jpg");
-
   //printf("%f\n",size);
 }
