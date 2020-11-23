@@ -1,3 +1,0 @@
-/home/pi/projeto/projetoEmbarcados/src/build/CMakeFiles/rebuild_cache.dir
-/home/pi/projeto/projetoEmbarcados/src/build/CMakeFiles/breadMake.dir
-/home/pi/projeto/projetoEmbarcados/src/build/CMakeFiles/edit_cache.dir
