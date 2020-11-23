@@ -16,7 +16,9 @@ Clone o repositório
 git clone https://github.com/jschneiderm98/projetoEmbarcados
 ```
 Adicione o diretório do OpenCV na sua Raspberry Pi, no arquivo CMakeLists.txt
-![CMakeLists print screen](https://github.com/jschneiderm98/projetoEmbarcados/tree/main/assets/cmakelists.png)
+
+![CMakeLists print screen](https://raw.githubusercontent.com/jschneiderm98/projetoEmbarcados/main/assets/cmakelists.png)
+
 Crie uma pasta build e vá para ela
 ```
 mkdir build && cd build
