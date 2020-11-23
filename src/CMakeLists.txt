@@ -9,5 +9,4 @@ INCLUDE_DIRECTORIES( ${OpenCV_INCLUDE_DIRS} )
 INCLUDE_DIRECTORIES(src)
 
 ADD_EXECUTABLE(breadMake main.cpp ./components/display.cpp ./components/tempMeasure.c)                          
-TARGET_LINK_LIBRARIES (breadMake ${OpenCV_LIBS} Threads::Threads) 
-                   
+TARGET_LINK_LIBRARIES (breadMake ${OpenCV_LIBS} Threads::Threads)
