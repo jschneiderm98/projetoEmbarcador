@@ -7,14 +7,15 @@ int main() {
     
     float temp;
     double size;
-    struct dados growth;
+    dados *growth;
+    growth = (dados*) malloc(sizeof(dados));
     pthread_t p_temp, p_size, p_growth;
-    while(growth.growthStop){
+    while(growth->growthStop){
         pthread_create(&p_temp, NULL, &tempMeasure, &temp);
         pthread_create(&p_size, NULL, &webcamShot, &size);
         pthread_join(p_size, NULL);
-        growth.sizeX=size;
-        pthread_create(&p_growth, NULL, &sizeBread, &growth);
+        growth->sizeX=size;
+        pthread_create(&p_growth, NULL, &sizeBread, growth);
         pthread_join(p_temp, NULL);
         pthread_join(p_growth,NULL);
         system("clear");
