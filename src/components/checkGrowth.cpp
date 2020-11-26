@@ -3,7 +3,7 @@
 double calcVars(double means[])
 {
     double var;
-    for (int i = 0; i < (sizeof(means)/sizeof(double)) - 1; i++)
+    for (int i = 0; i < 9; i++)
     {
         var += means[i+1] - means[i];
     }
@@ -13,11 +13,11 @@ double calcVars(double means[])
 double meanVars(double vars[])
 {
     double meanVar;
-    for (int i = 0; i < (sizeof(vars)/sizeof(double)); i++)
+    for (int i = 0; i < 10; i++)
     {
         meanVar += vars[i];
     }
-    return meanVar / (sizeof(vars)/sizeof(double));
+    return meanVar / 10;
 }
 
 void* sizeBread(void* arg) {
@@ -76,4 +76,5 @@ void* sizeBread(void* arg) {
             mean = 0;
         }
     }
+    return NULL;
 }

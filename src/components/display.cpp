@@ -5,7 +5,7 @@
 #include <unistd.h>
 #define lower_thresh 0
 #define upper_thresh 65
-#define dilation_size 4;
+#define dilation_size 4
 using namespace cv;
 using namespace std;
 Mat src_gray;
@@ -34,7 +34,7 @@ double imageProcess(char* image)
     
     Mat canny_output;
     Canny( src_gray, canny_output, lower_thresh, upper_thresh);
-    Mat element = getStructuringElement( dilation_type, Size( 2*dilation_size + 1, 2*dilation_size+1 ), Point( dilation_size, dilation_size ) );
+    Mat element = getStructuringElement( dilation_type,Size( 2*dilation_size + 1, 2*dilation_size+1 ),Point( dilation_size, dilation_size ) );
     dilate(canny_output, canny_output, element);
     vector<vector<Point> > contours;
     vector<Vec4i> hierarchy;
@@ -51,7 +51,7 @@ double imageProcess(char* image)
 
 void* webcamShot(void *arg){
   double* size = (double*) arg;
-  system("fswebcam -d /dev/video0 /tmp/dough.jpg > out.log 2> err.log");
+  system("fswebcam --no-banner -r 1280x720 -S 2 -F 12 -q /tmp/dough.jpg");
   *size = imageProcess("/tmp/dough.jpg");
   //printf("%f\n",size);
 }
