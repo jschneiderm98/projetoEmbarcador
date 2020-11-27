@@ -8,6 +8,10 @@ int main() {
     float temp;
     double size;
     dados *growth;
+    growth->quantityMeans = 1;
+    growth->quantityMeasures = 1;
+    growth->quantityVars = 1;
+    growth->growthStop = 1;
     growth = (dados*) malloc(sizeof(dados));
     pthread_t p_temp, p_size, p_growth;
     while(growth->growthStop){
@@ -23,7 +27,6 @@ int main() {
         std::cout << "|     Bread Area: " << size << "         |" << std::endl;
         std::cout << "|     Temperature: " << temp << "        |" << std::endl;
         std::cout << "------------------------------------------" << std::endl;
-        usleep(500000);
     }
     return 0;
 }

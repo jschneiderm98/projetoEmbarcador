@@ -27,8 +27,7 @@ double imageProcess(char* image)
       cout << "Usage: " << image << " <Input image>" << endl;
       return -1;
     }
-    resize(src, src, Size(), 0.9, 0.9);
-    GaussianBlur(src_gray, src_gray,Size(7, 7), 1);
+    GaussianBlur(src, src,Size(7, 7), 1);
     cvtColor( src, src_gray, COLOR_BGR2GRAY );
     //adaptiveThreshold(src_gray, src_gray, 80, ADAPTIVE_THRESH_GAUSSIAN_C,THRESH_BINARY, 51, 12);
     
