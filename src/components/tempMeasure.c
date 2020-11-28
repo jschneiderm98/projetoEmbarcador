@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#define redundancy 5
 
 void* tempMeasure(void* arg){
     float *temperatura = (float*) arg;
@@ -9,16 +10,15 @@ void* tempMeasure(void* arg){
     int i=0;
     float temp, total = 0;
     FILE  *fp;
-    char leitura[100];
-    while(i<10)
+    while(i < redundancy)
     {
-        system("cat /sys/bus/w1/devices/28-3c01a81664b5/w1_slave > temperature.txt");
-        fp=fopen("temperature.txt","r");
+        /*system("cat /sys/bus/w1/devices/28-3c01a81664b5/w1_slave > temperature.txt");
+        fp=fopen("temperature.txt","r");*/
+        fp=fopen("/sys/bus/w1/devices/28-3c01a81664b5/w1_slave","r");
         if(fp == NULL) return NULL;
         fscanf(fp, "%*[^\n]\n");
-        fscanf(fp,"%*29c%s",leitura);
-        temp = strtof(leitura, NULL);
-        temp /= 1000;;
+        fscanf(fp,"%*29c%f",temp);
+        temp /= 1000;
         temp = temp - 5;
         total += temp;
         fclose(fp);    
