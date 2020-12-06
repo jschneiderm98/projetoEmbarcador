@@ -5,9 +5,9 @@ O seguinte projeto propõe um sistema para fermentação culinária, uma estufa 
 ## Dependências
 
 - [OpenCV](https://opencv.org/)
-- [Compilador de C++](https://gcc.gnu.org/)
+- [Compilador de C++ e C](https://gcc.gnu.org/)
 - [CMake](https://cmake.org/)
-- Make
+- [Sitema Operacional Linux](https://ubuntu.com/)
 
 ## Inicialização
 
@@ -15,9 +15,17 @@ Clone o repositório
 ```
 git clone https://github.com/jschneiderm98/projetoEmbarcados
 ```
+Adicione o diretório do OpenCV na sua Raspberry Pi, no arquivo CMakeLists.txt
+
+![CMakeLists print screen](https://raw.githubusercontent.com/jschneiderm98/projetoEmbarcados/main/assets/cmakelists.png)
+
+Crie uma pasta build e vá para ela
+```
+mkdir build && cd build
+```
 Compile o código utilizando o CMake
 ```
-cmake .
+cmake ..
 ```
 Execute o arquivo
 ```
