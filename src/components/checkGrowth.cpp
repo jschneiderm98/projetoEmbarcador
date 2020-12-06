@@ -1,5 +1,5 @@
 #include "../headers/general.hpp"
-#define redundancy 2
+#define redundancy 8
 double calcVars(double means[])
 {
     double var;
