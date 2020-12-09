@@ -3,9 +3,9 @@
 #include "opencv2/imgproc.hpp"
 #include <iostream>
 #include <unistd.h>
-#define lower_thresh 0
-#define upper_thresh 65
-#define dilation_size 4
+#define lower_thresh 78 
+#define upper_thresh 140
+#define dilation_size 2
 using namespace cv;
 using namespace std;
 Mat src_gray;
@@ -35,22 +35,23 @@ double imageProcess(char* image)
     Canny( src_gray, canny_output, lower_thresh, upper_thresh);
     Mat element = getStructuringElement( dilation_type,Size( 2*dilation_size + 1, 2*dilation_size+1 ),Point( dilation_size, dilation_size ) );
     dilate(canny_output, canny_output, element);
+    //imshow( "result", canny_output);
     vector<vector<Point> > contours;
     vector<Vec4i> hierarchy;
     findContours( canny_output, contours, hierarchy, RETR_TREE, CHAIN_APPROX_SIMPLE );
     std::sort(contours.begin(), contours.end(), compareContourAreas);
-    vector<Moments> mu(contours.size() );
-    Mat drawing = Mat::zeros( canny_output.size(), CV_8UC3 );
+    //vector<Moments> mu(contours.size() );
+    //Mat drawing = Mat::zeros( canny_output.size(), CV_8UC3 );
     //Scalar color = Scalar( rng.uniform(0, 256), rng.uniform(0,256), rng.uniform(0,256) );
     //drawContours( drawing, contours, contours.size()-1, color, 2, LINE_8, hierarchy, 0 );
+    //imshow( "Contours", drawing );
     //cout << "Bread Area: " << contourArea(contours[contours.size()-1]) << endl;
-    double temp = contourArea(contours[contours.size()-1]);
-    return temp;
+    double area = contourArea(contours[contours.size()-1]);
+    return area;
 }
 
 void* webcamShot(void *arg){
   double* size = (double*) arg;
   system("fswebcam --no-banner -r 1280x720 -S 2 -F 12 -q /tmp/dough.jpg");
   *size = imageProcess("/tmp/dough.jpg");
-  //printf("%f\n",size);
 }
